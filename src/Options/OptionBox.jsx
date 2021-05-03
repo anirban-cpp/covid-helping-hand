@@ -14,7 +14,7 @@ const OptionBox = ({title, subtitle, image, contact, path}) => {
     return (
         <Card>
             <CardContent>
-                <div className='optionBox' onClick={() => { history.push(`${path}`) }}>
+                <div className='optionBox' onClick={(e) => {path ? history.push(`${path}`) : e.preventDefault() }}>
                     <div className='optionBox__left'>
                         <h2 className='infoBox__cases'>{title}</h2>
                         <Typography className='infoBox__title' color='textSecondary'>{subtitle}</Typography>
