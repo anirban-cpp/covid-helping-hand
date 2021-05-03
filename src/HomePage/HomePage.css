@@ -1,0 +1,88 @@
+.homepage {
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.homepage__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0.5;
+  height: 75%;
+}
+
+.homepage__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 0.5;
+  height: 100%;
+}
+
+.homepage__left > div {
+  width: 35%;
+}
+
+.homepage__left > div:hover {
+  cursor: pointer;
+  transform: scale(1.07);
+}
+
+.homepage__cases {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+.homepage__cases > div {
+  width: 25%;
+}
+
+.homepage__graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage__button {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.homepage__button > button {
+  width: 30%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 176, 255) 0%,
+    rgb(0, 232, 236) 100%
+  );
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.homepage__button > button:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 143, 255) 0%,
+    rgb(12, 99, 250) 100%
+  );
+  transition: all 0.4s ease-out;
+}
