@@ -5,7 +5,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  min-height: 80vh;
+  padding: 10px 0;
 }
 
 .homepage__right {
@@ -15,6 +16,8 @@
   align-items: center;
   flex: 0.5;
   height: 75%;
+  gap:2rem;
+  margin-bottom: 24px;
 }
 
 .homepage__left {
@@ -24,6 +27,7 @@
   align-items: center;
   flex: 0.5;
   height: 100%;
+  gap:2rem
 }
 
 .homepage__left > div {
@@ -33,6 +37,7 @@
 .homepage__left > div:hover {
   cursor: pointer;
   transform: scale(1.07);
+  transition: all .5s ease;
 }
 
 .homepage__cases {
@@ -86,3 +91,41 @@
   );
   transition: all 0.4s ease-out;
 }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .homepage{
+    flex-direction: column;
+    justify-content: none;
+  }
+
+  .homepage__left {
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 24px 0;
+  }
+  .homepage__left > div{
+    width: 70%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px ) and (max-width: 1024px) {
+  .homepage{
+    flex-direction: column;
+    justify-content: unset;
+  }
+  .homepage__left {
+    flex-direction: row;
+    flex: .3;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 24px 0;
+    
+  }
+  
+}
+

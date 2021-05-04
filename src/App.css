@@ -5,5 +5,18 @@
   font-family: "PT sans", sans-serif;
 }
 
-.App {
+@media only screen and (max-width: 600px) {
+  .App .heading__test {
+    grid-template-columns: 1fr;
+    width: 90%;
+    grid-gap:16px;
+  }
+}
+
+@media only screen and (min-width: 600px ) and (max-width: 1024px){
+  .App .heading__test {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    
+  }
 }
