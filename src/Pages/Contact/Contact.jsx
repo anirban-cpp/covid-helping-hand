@@ -43,7 +43,8 @@ const Contact = () => {
                     <h3>Reach out to us by joining our Whatsapp group. </h3>
                     <div onClick={() => { history.push('/whatsapp') }}>
                         <img 
-                            src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c543.png"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/150px-WhatsApp.svg.png"
+                            alt=""
                         />
                     </div>
                 </div>
