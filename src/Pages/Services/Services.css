@@ -83,3 +83,10 @@
   width: 100%;
   z-index: 1;
 }
+
+.heading__tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
