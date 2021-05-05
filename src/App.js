@@ -14,6 +14,11 @@ import Plasma from './Pages/Plasma/Plasma';
 
 function App() {
 
+
+  const hideMarquee = ()=>{
+    const marq = document.querySelector('.marquee');
+    marq.style.display = 'none';
+  }
   return (
     <Router>
       <div className="App">
@@ -23,6 +28,12 @@ function App() {
           // Footer
         }
         <Header/>
+        <div className="marquee">
+        <marquee direction="left" scrollamount="4" width="100%" style={{fontSize:16+'px'}}>
+        DISCLAIMER: We are not liable for any inaccuracies of data as we have collected data from different online sources. We have verified most of the data but it can change with respect to availability.
+        </marquee>
+        <button type="button" id="hide-marquee" onClick={hideMarquee}>×</button>
+        </div>
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/contact' component={Contact} />
