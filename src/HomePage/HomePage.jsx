@@ -84,7 +84,7 @@ const HomePage = () => {
                 </div>
                 <div className='homepage__button'>
                     <button onClick={() => {history.push('/meals')}}>Covid Meals for India</button>
-                    <button onClick={() => {history.push('/consult_doctor')}}>Consut a doctor</button>
+                    <button onClick={() => {history.push('/consult_doctor')}}>Consult a doctor</button>
                 </div>
             </div>
         </div>

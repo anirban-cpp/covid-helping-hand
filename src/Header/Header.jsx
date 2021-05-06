@@ -71,7 +71,7 @@ const Header = () => {
                         ) : ( <></> )
                     }
                     <div className={active==='Contact' ? "nav-item-active" : "nav-item"} onClick={() => optionClick({tab: 'Contact',path: '/contact'})}>
-                        <a className="nav-link">CONTACT US</a>
+                        <a className="nav-link">WB Red Volunteers</a>
                     </div>
                 </div>
                 <div className="hamburger">
