@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './Header.css';
 import Register from '../Registration/Register';
@@ -9,7 +9,7 @@ const Header = () => {
 
     const [isopen, setisOpen] = useState(false);
     const [active, setactive] = useState('Home');
-
+    
     const history = useHistory();
 
     const handleClick = () => { 
@@ -23,35 +23,63 @@ const Header = () => {
         history.push(`${path}`);
     }
 
+    useEffect(() => {
+        const hamburger = document.querySelector(".hamburger");
+        const navLink = document.querySelectorAll(".nav-link");
+        hamburger.addEventListener("click", mobileMenu);
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+      },[]);
+
+    const mobileMenu = () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+
+    const closeMenu = () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }
+
     return (
         <div className='header'>
-            <div className='header__logo' onClick={() => {history.push('/'); setactive('Home')}}>
-                <img
-                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/110px-SARS-CoV-2_without_background.png'
-                    alt=""
-                />
-                <h3>COVID Helping Hand</h3>
-            </div>
-            <div className="header__options">
-                <div className={active==='Home' ? "header__option__active" : "header__option"} onClick={() => optionClick({tab: 'Home',path: '/'})}>
-                    <h4>HOME</h4>
+            <nav className="navbar">
+                <div className='header__logo' onClick={() => {history.push('/'); setactive('Home')}}>
+                    <img
+                        src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/110px-SARS-CoV-2_without_background.png'
+                        alt=""
+                    />
+                    <h3>COVID Helping Hand</h3>
                 </div>
-                <div className="header__option" onClick={handleClick}>
-                    <h4>BE A DONOR</h4>
+                <div className="nav-menu">
+                    <div className={active==='Home' ? "nav-item-active" : "nav-item"} onClick={() => optionClick({tab: 'Home',path: '/'})}>
+                        <a className="nav-link">HOME</a>
+                    </div>
+                    <div className="nav-item" onClick={handleClick}>
+                        <a className="nav-link">BE A DONOR</a>
+                    </div>
+                    {
+                        isopen ? (
+                        <CustomDialog
+                            isopen={isopen}
+                            handleClose={handleClick}
+                            title={`Become a Donor`}
+                        ><Register/></CustomDialog>
+                        ) : ( <></> )
+                    }
+                    <div className={active==='Contact' ? "nav-item-active" : "nav-item"} onClick={() => optionClick({tab: 'Contact',path: '/contact'})}>
+                        <a className="nav-link">WB Red Volunteers</a>
+                    </div>
                 </div>
-                {
-                    isopen ? (
-                    <CustomDialog
-                        isopen={isopen}
-                        handleClose={handleClick}
-                        title={`Become a Donor`}
-                    ><Register/></CustomDialog>
-                    ) : ( <></> )
-                }
-                <div className={active==='Contact' ? "header__option__active" : "header__option"} onClick={() => optionClick({tab: 'Contact',path: '/contact'})}>
-                    <h4>WB Red Volunteers</h4>
+                <div className="hamburger">
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
                 </div>
-            </div>
+            </nav>
         </div>
     );
 }
