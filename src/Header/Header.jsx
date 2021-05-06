@@ -49,7 +49,7 @@ const Header = () => {
                     ) : ( <></> )
                 }
                 <div className={active==='Contact' ? "header__option__active" : "header__option"} onClick={() => optionClick({tab: 'Contact',path: '/contact'})}>
-                    <h4>CONTACT US</h4>
+                    <h4>WB Red Volunteers</h4>
                 </div>
             </div>
         </div>
