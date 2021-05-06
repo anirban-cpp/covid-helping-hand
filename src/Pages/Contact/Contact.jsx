@@ -39,14 +39,6 @@ const Contact = () => {
     } else {
         return (
             <div className='contact'>
-                <div className='whatsapp'>
-                    <h3>Reach out to us by joining our Whatsapp group. </h3>
-                    <div onClick={() => { history.push('/whatsapp') }}>
-                        <img 
-                            src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c543.png"
-                        />
-                    </div>
-                </div>
                 <h1>Bengal Red Volunteers</h1>
                 <Divider/>
                 <div>

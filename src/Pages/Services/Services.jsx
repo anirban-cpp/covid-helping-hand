@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
 
 import { useHistory } from 'react-router';
-import OptionBox from '../../Options/OptionBox';
 import db from '../../Firebase';
-
 import './Services.css';
 import CircularIndeterminate from '../../Spinner/Spinner';
+import ScrollableTabsButtonForce from '../../Tab/TabPanel';
 
 const Services = () => {
 
     const history = useHistory();
 
     const [Centers, setCenters] = useState([]);
-
     const [isloading, setloading] = useState(false);
 
     useEffect(() => {
@@ -42,19 +40,11 @@ const Services = () => {
                     <h1>Vaccination</h1>
                     <button onClick={() => history.push('/cowin')}>Book your Vaccine</button>
                 </div>
-                <h1>Testing centers</h1>
-                <div className='heading__test'>
-                {
-                    Centers?.map(center => (
-                        <div>
-                            <OptionBox
-                            title={center.data.name}
-                            subtitle={center.data.address}
-                            contact={center.data.contact}
-                            />
-                        </div>
-                    ))
-                }
+                <h1 style={{marginBottom: '10px'}}>Testing centers</h1>
+                <div className='heading__tab'>
+                    <ScrollableTabsButtonForce
+                        Centers={Centers}
+                    />
                 </div>
             </div>
         )

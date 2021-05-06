@@ -56,6 +56,15 @@ a {
 
 .nav-logo {
   font-size: .5rem;
+  width: 100%;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  box-shadow: 0px 5px 8px -3px rgba(78, 77, 77, 0.61);
+  overflow: hidden;
+  background: linear-gradient(rgb(39, 37, 37), rgb(87, 86, 86));
+  color: white;
+
 }
 
 .header__logo {

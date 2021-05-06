@@ -12,6 +12,7 @@ import Beds from './Pages/Bed/Bed';
 import Oxygen from './Pages/Oxygen/Oxygen';
 import Plasma from './Pages/Plasma/Plasma';
 
+
 function App() {
 
 
