@@ -40,6 +40,7 @@ const Contact = () => {
         return (
             <div className='contact'>
                 <h1>Bengal Red Volunteers</h1>
+                <h3>Join our whatsapp group : <a className="whatsappIcon" href="https://chat.whatsapp.com/H0hVkXVD4ad6KrW07rHdQG" >Join</a></h3>
                 <Divider/>
                 <div>
                     <BasicTable
